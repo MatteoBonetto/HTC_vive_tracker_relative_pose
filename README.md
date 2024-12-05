@@ -39,14 +39,6 @@ Go to Steam -> SteamVR -> Properties -> Betas. And choose beta - SteamVR Beta Up
     Change `"requireHmd": true`, to `"requireHmd": false,`, `"forcedDriver": "",` to `"forcedDriver": "null"`, and `"activateMultipleDrivers": false,` to `"activateMultipleDrivers": true,`.
     Notice that, like it says at the top of the file, this file will be replaced when SteamVR updates. If you want, you can place the settings in your `steamvr.vrsettings` file located somewhere in the Steam directory. Make sure you place them under the steamvr header.
 
-### If you have intel graphics ###
-
-Intel graphics are not supported by SteamVRV.
-Error (306) : install mesa-vulkan-drivers (needed ?)
-Error (307) : you can track with this error
-
-After lunching steam, you might need to kill the process vrcompositor.
-
 ## Usage
 
 ### Calibration
