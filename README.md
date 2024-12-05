@@ -68,6 +68,13 @@ Alternatively, you can pass a file path to `vive_field_calibration.py` with `-p 
 If a consistency error occurs, the joystick will vibrate, and you should start the calibration
 over.
 
+To run correctly this code you would probably need to install:
+```bash
+python3 -m pip install --upgrade setuptools
+python3 -m pip install pybullet
+
+```
+
 #### New calibration version
 In the new calibration version, a new file `field_points_trackers.json` is created with each tracker used to calibrate the field.
 ```json
