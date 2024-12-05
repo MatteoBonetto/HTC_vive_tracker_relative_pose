@@ -17,6 +17,10 @@ use the one from `misc/`.*
 ### Python
 
 In this repository python3.* must be used.
+```bash
+sudo apt-get install build-essential
+sudo apt-get install python3.12-dev
+```
 
 You need to install the following dependencies:
 
