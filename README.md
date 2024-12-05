@@ -30,13 +30,14 @@ Go to Steam -> SteamVR -> Properties -> Betas. And choose beta - SteamVR Beta Up
 
 ### Remove the need of headset
 
-```bash
-gedit ~/.steam/steam/steamapps/common/SteamVR/resources/settings/default.vrsettings
-```
-
-1. Change the third line from `"requireHmd" : true`, to `"requireHmd" : false`,
-
-2. Save and exit the settings document.
+- **Null Driver File**
+    The null driver file can be found in `*Steam Directory*/steamapps/common/SteamVR/drivers/null/resources/settings/default.vrsettings`.
+    Open the null driver file and replace `"enable": false`, with `"enable": true`.
+  
+- **SteamVR Config File**
+    The second file, the SteamVR config file, can be found in `~/.steam/steam/steamapps/common/SteamVR/resources/settings/default.vrsettings`
+    Change `"requireHmd": true`, to `"requireHmd": false,`, `"forcedDriver": "",` to `"forcedDriver": "null"`, and `"activateMultipleDrivers": false,` to `"activateMultipleDrivers": true,`.
+    Notice that, like it says at the top of the file, this file will be replaced when SteamVR updates. If you want, you can place the settings in your `steamvr.vrsettings` file located somewhere in the Steam directory. Make sure you place them under the steamvr header.
 
 ### If you have intel graphics ###
 
