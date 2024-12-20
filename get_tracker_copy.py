@@ -97,7 +97,7 @@ try:
             T_pallet[:3, :3] = quat2mat(quat_pallet)
             T_pallet[:3, 3] = p_pallet
 
-            T_fork_pallet = np.dot(np.linalg.inv(T_pallet), T_fork)
+            T_fork_pallet = np.dot(T_pallet, np.linalg.inv(T_fork))
             # Extract translation and rotation components from T_fork_pallet
             t_fork_pallet = T_fork_pallet[:3, 3]  # Translation vector
             R_fork_pallet = T_fork_pallet[:3, :3]  # Rotation matrix
@@ -106,12 +106,22 @@ try:
             d_translation = np.linalg.norm(t_fork_pallet)
             # difference rotation quaternion
             euler_differences = mat2euler(R_fork_pallet, axes='sxyz') #The first angle is the rotation about the Z axis with sign. The second angle is the rotation about the Y axis with sign. The third angle is the rotation about the X axis with sign.
-            euler_differences_deg = (euler_differences[0] * 180 / math.pi, euler_differences[1] * 180 / math.pi, euler_differences[2] * 180 / math.pi)
+            euler_differences_deg = (euler_differences[2] * 180 / math.pi, euler_differences[1] * 180 / math.pi, euler_differences[0] * 180 / math.pi)
 
+            p_diff = p_pallet - p_fork
             # Show results
-            print("Euclidean distance from forks to pallet in T_fork_pallet: %g" % d_translation)
+            print("T_fork")
+            print(T_fork)
+            print("inv_T_fork")
+            print(np.linalg.inv(T_fork))
+            print("T_pallet")
+            print(T_pallet)
+            print("T_fork_pallet")
+            print(T_fork_pallet)
+            print("Euclidean distance from forks to pallet: %g" % d_translation)
             print("distance components from forks to pallet")
             print("  - x: %g, y: %g, z: %g" % (t_fork_pallet[0], t_fork_pallet[1], t_fork_pallet[2]))
+            print("  - x: %g, y: %g, z: %g" % (p_diff[0], p_diff[1], p_diff[2]))
             print("Rotation in degrees  from forks to pallet")
             print("  - roll: %g, pitch: %f, yaw: %g" % tuple(euler_differences_deg))
 
