@@ -105,7 +105,7 @@ try:
             # Compute Euclidean distance for translation
             d_translation = np.linalg.norm(t_fork_pallet)
             # difference rotation quaternion
-            euler_differences = mat2euler(R_fork_pallet, axes='sxyz') #The first angle is the rotation about the Z axis with sign. The second angle is the rotation about the Y axis with sign. The third angle is the rotation about the X axis with sign.
+            euler_differences = mat2euler(R_fork_pallet, axes='rxyz') 
             euler_differences_deg = (euler_differences[0] * 180 / math.pi, euler_differences[1] * 180 / math.pi, euler_differences[2] * 180 / math.pi)
 
             # Show results
