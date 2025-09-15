@@ -20,6 +20,17 @@ In this repository python3.* must be used.
 ```bash
 sudo apt-get install build-essential
 sudo apt-get install python3.12-dev
+sudo apt-get install python3.12-venv
+```
+
+Change directory to place the virtual environment (suggested: Home)
+Create a virtual environment
+```bash
+python3 -m venv VirtualEnvironment
+```
+Activate the virtual environment 
+```bash
+source VirtualEnvironment/bin/activate
 ```
 
 You need to install the following dependencies:
