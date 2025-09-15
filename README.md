@@ -28,9 +28,10 @@ Create a virtual environment
 ```bash
 python3 -m venv VirtualEnvironment
 ```
-Activate the virtual environment 
+Activate the virtual environment and install pybullet (for the visualization)
 ```bash
 source VirtualEnvironment/bin/activate
+pip install pybullet
 ```
 
 You need to install the following dependencies:
