@@ -10,6 +10,8 @@ for analysis purpose.
 
 You need to install steam and SteamVR.
 
+[link for installation STEAM](https://store.steampowered.com/about/)
+
 *Note: There is possibilities that it doesn't create `udev` rules properly, if the file
 `/lib/udev/rules.d/60-HTC-Vive-perms.rules` is not created by the process, you can
 use the one from `misc/`.*
@@ -42,7 +44,8 @@ You need to install the following dependencies:
 
 ### Install the beta version of SteamVR ###
 
-Go to Steam -> SteamVR -> Properties -> Betas. And choose beta - SteamVR Beta Update
+[link for installation](https://store.steampowered.com/app/250820/SteamVR/).
+
 
 ### Remove the need of headset
 
