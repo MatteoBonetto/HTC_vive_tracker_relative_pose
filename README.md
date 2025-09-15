@@ -8,9 +8,10 @@ for analysis purpose.
 
 ### Steam and SteamVR
 
-You need to install steam and SteamVR.
+You need to install Steam and SteamVR.
 
-[link for **STEAM** installation ](https://store.steampowered.com/about/)
+[link for **Steam** installation ](https://store.steampowered.com/about/).
+
 [link for **SteamVR** installation](https://store.steampowered.com/app/250820/SteamVR/).
 
 *Note: There is possibilities that it doesn't create `udev` rules properly, if the file
