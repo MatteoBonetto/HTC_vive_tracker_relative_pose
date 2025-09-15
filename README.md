@@ -44,11 +44,6 @@ You need to install the following dependencies:
 
 ## How to use SteamVR ##
 
-### Install the beta version of SteamVR ###
-
-[link for installation](https://store.steampowered.com/app/250820/SteamVR/).
-
-
 ### Remove the need of headset
 
 - **Null Driver File**
@@ -62,25 +57,25 @@ You need to install the following dependencies:
 
 ## Usage
 
+### Get absolute poses and ID
+It works with a minimum of 1 tracker.
+Run vive_server.py:
+```bash
+python3 vive_server.py 
+```
+You can also set a frequency with:
+```bash
+vive_server.py [--max_freq MAX_FREQ]
+```
+__(substitute MAX_FREQ with the value of frequence in Hz)__
+
+
 ### Calibration
 
-#### New calibration version (TO BE USED)
-In the new calibration version, a new file `field_points_trackers.json` is created with each tracker used to calibrate the field.
-```json
-{
-  "LHR-42A22618": [-2.5, -2, 0],
-  "LHR-815E4573": [1, 0, 0],
-  "LHR-52015056": [-2.5, 2, 0],
-  ...,
-  "<trackers_id>": [xn, yn, zn]
-}
-```
-It's recommended not to place trackers on point of interest.
-
-#### Old calibration version with `vive_field_calibration.py` and `vive_server.py`
-First, you can edit `field_points.json` to set up your ground truth positions. Then, run
-`vive_field_calibration.py`. You need to have a paired controller then, and to go to each
-position one by one (indicated in the 3D viewer by an arrow) to tag them.
+#### With `vive_field_calibration.py` and `vive_server.py`
+First, you must create/edit `field_points.json` to set up your __ground truth positions__. Then, run
+`vive_field_calibration.py`. You need to have a paired **controller** then, and to go to each
+position one by one (indicated in the 3D viewer by an arrow) to tag them and press the button (whatever you want).
 
 The `field_points.json` should contain at least 3 points, and formatted as following:
 
@@ -103,8 +98,20 @@ To run correctly this code you would probably need to install:
 ```bash
 python3 -m pip install --upgrade setuptools
 python3 -m pip install pybullet
-
 ```
+
+#### Outcome
+A new file `calibration.json` is created with each beacon used to calibrate the field.
+```json
+{
+  "LHR-42A22618": [-2.5, -2, 0],
+  "LHR-815E4573": [1, 0, 0],
+  "LHR-52015056": [-2.5, 2, 0],
+  ...,
+  "<trackers_id>": [xn, yn, zn]
+}
+```
+this file will be used for all other tools
 
 ### Running the viewer
 
